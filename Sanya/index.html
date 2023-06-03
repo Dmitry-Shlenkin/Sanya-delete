@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Измерение мощности 3G-сигнала</title>
+  </head>
+  <body>
+    <p>Мощность 3G-сигнала: <span id="signal"></span></p>
+    
+    <script>
+      // Получение объекта NetworkInformation
+      var networkInfo = navigator.connection;
+      
+      // Обработчик изменения состояния соединения
+      networkInfo.addEventListener('change', function() {
+        var signalStrength = networkInfo.rssi;
+        document.getElementById('signal').innerHTML = signalStrength + 'dBm';
+      });
+    </script>
+  </body>
+</html>
